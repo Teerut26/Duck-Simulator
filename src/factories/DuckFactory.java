@@ -2,11 +2,10 @@
 package factories;
 
 import abstracts.AbstractDuckFactory;
+import adapters.GooseAdapter;
+import adapters.PigeonAdapter;
 import interfaces.Quackable;
-import models.DuckCall;
-import models.MallardDuck;
-import models.RedheadDuck;
-import models.RubberDuck;
+import models.*;
 
 public class DuckFactory extends AbstractDuckFactory {
     @Override
@@ -27,5 +26,15 @@ public class DuckFactory extends AbstractDuckFactory {
     @Override
     public Quackable createDuckCall() {
         return new DuckCall();
+    }
+
+    @Override
+    public Quackable createPigeon() {
+        return new PigeonAdapter(new Pigeon());
+    }
+
+    @Override
+    public Quackable createGoose() {
+        return new GooseAdapter(new Goose());
     }
 }

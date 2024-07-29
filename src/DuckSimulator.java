@@ -10,6 +10,8 @@ class DuckSimulator {
     ArrayList<Quackable> ducks = new ArrayList<>();
 
     public DuckSimulator(AbstractDuckFactory duckFactory) {
+        ducks.add(duckFactory.createGoose());
+        ducks.add(duckFactory.createPigeon());
         ducks.add(duckFactory.createMallardDuck());
         ducks.add(duckFactory.createRedheadDuck());
         ducks.add(duckFactory.createRubberDuck());

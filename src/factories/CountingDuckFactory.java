@@ -2,6 +2,8 @@
 package factories;
 
 import abstracts.AbstractDuckFactory;
+import adapters.GooseAdapter;
+import adapters.PigeonAdapter;
 import interfaces.Quackable;
 import models.*;
 
@@ -24,5 +26,15 @@ public class CountingDuckFactory extends AbstractDuckFactory {
     @Override
     public Quackable createDuckCall() {
         return new QuackCounter(new DuckCall());
+    }
+
+    @Override
+    public Quackable createPigeon() {
+        return new PigeonAdapter(new Pigeon());
+    }
+
+    @Override
+    public Quackable createGoose() {
+        return new GooseAdapter(new Goose());
     }
 }
